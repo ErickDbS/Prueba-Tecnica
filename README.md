@@ -1,14 +1,24 @@
-# Prueba-Tecnica
-Aplicacion en React consumiendo API swapi para mostrar en un fetch informacion de sus personajes e informacion relevante de los personajes (peliculas, vehiculos y naves)
+# Prueba Técnica
 
-# Teconologias usadas:
+Aplicación en React que consume la API SWAPI para mostrar información de los personajes de Star Wars, incluyendo datos relevantes como películas, vehículos y naves.
+
+# Tecnologías usadas
+
 Vite
+
 React
+
 JavaScript
+
 Axios
+
 TailwindCSS
 
-# Instrucciones para la clonacion:
-Clonar el repositorio https://github.com/ErickDbS/Prueba-Tecnica.git
-Instalar las dependencias con npm install
-Correr el proyecto con npm run dev
+# Instrucciones para la clonación y ejecución
+Clonar el repositorio: git clone https://github.com/ErickDbS/Prueba-Tecnica.git
+Entrar en la carpeta del proyecto: cd Prueba-Tecnica
+Instalar las dependencias: npm install
+Ejecutar la aplicación: npm run dev
+
+
+
