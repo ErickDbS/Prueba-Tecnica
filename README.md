@@ -27,6 +27,10 @@ Instalar las dependencias:
 
 npm install
 
+Crear un archivo .env con la siguiente informacion
+
+VITE_API_URL=https://swapi.info/api
+
 Ejecutar la aplicación:
 
 npm run dev
