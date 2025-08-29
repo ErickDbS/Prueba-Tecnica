@@ -118,61 +118,79 @@ useEffect(() => {
 
   }, [selectedCharacter])
 
-  return(
+return (
   <>
-   
+    <div className="min-h-screen min-w-screen flex flex-col justify-center items-center bg-gray-950">
+      <h1 className="text-3xl text-center text-blue-400 font-bold mb-8 flex justify-center">
+        Enciclopedia de Star Wars
+      </h1>
+      <div className="w-full max-w-6xl flex flex-col items-center">
+        <SearchCharacters onSearch={handleSearch} />
 
-    <div className="min-h-screen p-6">
-      <h1 className="text-3xl text-center text-blue-400 font-bold mb-8">Enciclopedia de Star Wars</h1>
-        <SearchCharacters onSearch={handleSearch}/>
-        
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {currentCharacters.map((char, index) => (
-          <Card key={index} char={char} onOpen={() => setSelectedCharacter(char)}/>
-        ))}
+        <div className="flex justify-center w-full mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {currentCharacters.map((char, index) => (
+              <Card key={index} char={char} onOpen={() => setSelectedCharacter(char)} />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex justify-center gap-2 mt-6">
+          {Array.from({ length: totalPages }, (_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrentPage(i + 1)}
+              className={`px-3 py-1 rounded ${
+                currentPage === i + 1
+                  ? 'bg-blue-400 text-white'
+                  : 'bg-gray-700 text-gray-100'
+              }`}
+            >
+              {i + 1}
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
-
-    <div className="flex justify-center gap-2 mt-4">
-      {Array.from({ length: totalPages }, (_, i) => (
-        <button
-          key={i}
-          onClick={() => setCurrentPage(i + 1)}
-          className={`px-3 py-1 rounded ${currentPage === i + 1 ? 'bg-blue-400 text-white' : 'bg-gray-700 text-gray-100'}`}
-        >
-          {i + 1}
-        </button>
-      ))}
-    </div>
 
 
-    {selectedCharacter && (
+      {selectedCharacter && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-gray-900 p-6 rounded-lg shadow-lg w-96">
-            <h2 className="text-xl font-bold mb-4">{selectedCharacter.name}</h2>
-            <p>Peliculas:</p>
-            {films.map((film, index) => (
-              <li key={index}>{film}</li>
-            ))}
-            <p>Vehiculos</p>
-            {vehicles.map((vehicle, index) => (
-              <li key={index}>{vehicle}</li>
-            ))}
+            <h2 className="text-xl font-bold mb-4 text-center">
+              {selectedCharacter.name}
+            </h2>
+            <p>Películas:</p>
+            <ul className="list-disc list-inside mb-2">
+              {films.map((film, index) => (
+                <li key={index}>{film}</li>
+              ))}
+            </ul>
+            <p>Vehículos:</p>
+            <ul className="list-disc list-inside mb-2">
+              {vehicles.map((vehicle, index) => (
+                <li key={index}>{vehicle}</li>
+              ))}
+            </ul>
             <p>Naves:</p>
-            {starships.map((starship, index) => (
-              <li key={index}>{starship}</li>
-            ))}
+            <ul className="list-disc list-inside mb-2">
+              {starships.map((starship, index) => (
+                <li key={index}>{starship}</li>
+              ))}
+            </ul>
             <button
               onClick={() => setSelectedCharacter(null)}
-              className="mt-4 bg-red-500 text-blue-500 px-4 py-2 rounded"
+              className="mt-4 bg-red-500 text-white px-4 py-2 rounded"
             >
               Cerrar
             </button>
           </div>
         </div>
       )}
+    </div>
   </>
 )
+
+
   
 }
 

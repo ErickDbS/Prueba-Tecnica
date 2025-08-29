@@ -12,7 +12,7 @@ export default function Card({ char, onOpen}) {
     }, [])
 
   return (
-    <div className="bg-gray-900 text-gray-100 rounded-xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-200">
+    <div className="grid place-content-center bg-gray-900 text-gray-100 rounded-xl p-6 shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-200">
       <h2 className="text-center text-xl font-bold text-blue-400 mb-4">{char.name}</h2>
       <ul className="space-y-2">
         <li><span className="text-yellow-400 font-semibold">Altura:</span> {char.height} cm</li>
