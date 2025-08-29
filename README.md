@@ -15,10 +15,21 @@ Axios
 TailwindCSS
 
 # Instrucciones para la clonación y ejecución
-Clonar el repositorio: git clone https://github.com/ErickDbS/Prueba-Tecnica.git
-Entrar en la carpeta del proyecto: cd Prueba-Tecnica
-Instalar las dependencias: npm install
-Ejecutar la aplicación: npm run dev
+Clonar el repositorio: git clone
+
+https://github.com/ErickDbS/Prueba-Tecnica.git
+
+Entrar en la carpeta del proyecto:
+
+cd Prueba-Tecnica
+
+Instalar las dependencias:
+
+npm install
+
+Ejecutar la aplicación:
+
+npm run dev
 
 
 
